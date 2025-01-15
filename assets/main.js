@@ -60,7 +60,7 @@ function saveWhyAnswer() {
         })
         .then((data) => {
             alert("Thank you for  answer: " + data);
-            document.getElementById("whyanswer").style.display = 'none';
+            document.getElementById("explainwhy").style.display = 'none';
         })
         .catch((error) => {
             console.error("Error: ", error)

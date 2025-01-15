@@ -62,7 +62,7 @@ function whyAnswer()
         const val = this.value;
         saveAnswer(val);
 
-        if (val === "No") {
+        if (val === 'No') {
             findOutWhy();
         }
     });
@@ -93,42 +93,42 @@ function saveAnswer(answer) {
         });
 }
 
-
 function findOutWhy() {
     document.getElementById("explainwhy").style.display = "block";
 }
 
+const btnFormAnswer = document.getElementById("btnFormAnswer");
+btnFormAnswer.addEventListener("click", saveWhyAnswer);
 
 function saveWhyAnswer() {
-    const answer = document.getElementById("whyanswer").value;
+    const answerForm = document.getElementById("whyanswer").value;
+    console.log(answerForm);
     const data = new FormData();
     data.append("type", "whyanswer");
     data.append("articleid", "1221");
-    data.append("result", answer);
-
+    data.append("result", answerForm);
     fetch("ajax.php", {
         method: "POST",
-        body: data,
+        body: data
     })
         .then((response) => {
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`Error HTTP status: ${response.status}`)
             }
             return response.text();
         })
         .then((data) => {
-            alert("Thank you for your comments!");
-            document.getElementById("explainwhy").style.display = "none";
+            alert("Thank you for  answer: " + data);
+            document.getElementById("explainwhy").style.display = 'none';
         })
         .catch((error) => {
-            console.error("Error:", error);
-        });
+            console.error("Error: ", error)
+        })
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("explainwhy").style.display = "none";
-});
-
+    document.getElementById("explainwhy").style.display = 'none';
+})
 </script>
 
 
