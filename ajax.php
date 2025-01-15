@@ -3,6 +3,8 @@
 $type = $_POST['type'];
 if ($type == 'yesno') {
     yesNoLog();
+} else {
+    var_dump($_POST);
 }
 
 function yesNoLog()
