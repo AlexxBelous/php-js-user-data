@@ -5,14 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.css">
     <title>PHP and JS</title>
 </head>
 <body>
 
 
 <div id="binaryfeedback">
-    Are you happy with this service test?
+    Are you happy with this service?
     <input type="radio" name="answer" value="Yes"> Yes
     <input type="radio" name="answer" value="No"> No
     <div id="explainwhy" style="display: none; margin-top:15px;">
@@ -22,11 +22,16 @@
         <br>
         <button id="btnFormAnswer">Submit</button>
     </div>
+    <!-- Контейнер для звёзд -->
+    <div id="ratingsContainer" style="display: none; margin-top: 15px;">
+        <div id="rateYo"></div>
+    </div>
 </div>
 
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.js"></script>
 <script type="module" src="/assets/main.js"></script>
 </body>
 </html>
